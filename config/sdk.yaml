@@ -1,0 +1,8 @@
+#
+# package: github.com/fuyibing/sdk.
+#
+# [addr] consul server addr, default: 127.0.0.1:8500.
+# [scheme] consul server scheme, default: http.
+# [timeout] request consul timeout.
+# [sdk-timeout] call sdk timeout.
+#

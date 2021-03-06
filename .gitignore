@@ -1,0 +1,7 @@
+# ignore for sdk
+
+.idea
+vendor/
+
+*.bak
+*.zip
