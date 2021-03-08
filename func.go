@@ -4,6 +4,5 @@
 package sdk
 
 func Get(ctx interface{}, url string) {
-
 }
 

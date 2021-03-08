@@ -1,8 +1,22 @@
 #
 # package: github.com/fuyibing/sdk.
 #
-# [addr] consul server addr, default: 127.0.0.1:8500.
-# [scheme] consul server scheme, default: http.
-# [timeout] request consul timeout.
-# [sdk-timeout] call sdk timeout.
+# [cache-lifetime] Consul服务缓存时长(单位: 秒).
 #
+# [consul-address] Consul地址(默认: 127.0.0.1:8500).
+# [consul-scheme] Consul协议(默认: http).
+# [consul-timeout] Consul超时时长(默认: 3, 单位: 秒).
+#
+# [service-request-content-type]
+# [service-request-method]
+# [service-request-scheme]
+# [service-request-timeout]
+#
+cache-timelife: 1
+consul-address: "udsdk.turboradio.cn"
+consul-scheme: http
+consul-timeout: 3
+service-request-content-type: "application/json"
+service-request-method: POST
+service-request-scheme: "http"
+service-request-timeout: 25

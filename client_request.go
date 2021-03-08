@@ -17,6 +17,18 @@ import (
 )
 
 // 请求结构体.
+//
+//   req := sdk.NewRequest()
+//   req.SetBody(`{"key":"value"}`)
+//   req.SetContentType("application/json")
+//   req.SetHeader("X-B3-Traceid", "trace-id")
+//   req.SetMethod("")
+//   req.SetTimeout(10)
+//   req.SetUrl("http://example.com/a/b")
+//   req.SetUserAgent("sdk/1.2.3")
+//
+//   ctx := log.NewContext()
+//   res := req.Run(ctx)
 type ClientRequest struct {
 	url         string
 	body        *bytes.Buffer
@@ -32,10 +44,10 @@ func NewRequest() *ClientRequest {
 	return &ClientRequest{
 		body:        bytes.NewBufferString(``),
 		headers:     make(map[string]string),
-		method:      Config.RequestMethod,
-		timeout:     time.Duration(Config.RequestTimeout) * time.Second,
-		contentType: Config.RequestContentType,
-		userAgent:   Config.UserAgent,
+		method:      Config.ServiceRequestMethod,
+		timeout:     time.Duration(Config.ServiceRequestTimeout) * time.Second,
+		contentType: Config.ServiceRequestContentType,
+		userAgent:   Config.ServiceUserAgent,
 	}
 }
 

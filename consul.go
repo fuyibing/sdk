@@ -73,7 +73,7 @@ func (o *consul) fromCache(ctx interface{}, service string) (host string, has bo
 func (o *consul) fromServer(ctx interface{}, service string) (host string, err error) {
 	// begin.
 	if log.Config.DebugOn() {
-		log.Client.Debugfc(ctx, "[sdk=%s] read from {%s} begin.", service, Config.Address)
+		log.Client.Debugfc(ctx, "[sdk=%s] read from {%s} begin.", service, Config.ConsulAddress)
 	}
 	// ended.
 	t := time.Now()
@@ -81,9 +81,9 @@ func (o *consul) fromServer(ctx interface{}, service string) (host string, err e
 		d := time.Now().Sub(t).Seconds()
 		if r := recover(); r != nil {
 			err = fmt.Errorf("%v", r)
-			log.Client.Errorfc(ctx, "[sdk=%s][d=%f] read from {%s} error: %v.", service, d, Config.Address, r)
+			log.Client.Errorfc(ctx, "[sdk=%s][d=%f] read from {%s} error: %v.", service, d, Config.ConsulAddress, r)
 		} else if log.Config.InfoOn() {
-			log.Client.Infofc(ctx, "[sdk=%s][d=%f] read from {%s} and found {%s}.", service, d, Config.Address, host)
+			log.Client.Infofc(ctx, "[sdk=%s][d=%f] read from {%s} and found {%s}.", service, d, Config.ConsulAddress, host)
 		}
 	}()
 	// prepare.
@@ -98,7 +98,7 @@ func (o *consul) fromServer(ctx interface{}, service string) (host string, err e
 	host = fmt.Sprintf("%s:%d", se.Service.Address, se.Service.Port)
 	// add scheme prefix to service.
 	if !regexpServiceAddress.MatchString(host) {
-		host = fmt.Sprintf("%s://%s", ServiceScheme, host)
+		host = fmt.Sprintf("%s://%s", Config.ServiceScheme, host)
 	}
 	// update cache.
 	o.mu.Lock()
@@ -114,8 +114,8 @@ func (o *consul) initialize() {
 	o.times = make(map[string]time.Time)
 	o.mu = new(sync.RWMutex)
 	o.client, o.err = api.NewClient(&api.Config{
-		Address:  Config.Address,
-		Scheme:   Config.Scheme,
-		WaitTime: time.Duration(Config.Timeout) * time.Second,
+		Address:  Config.ConsulAddress,
+		Scheme:   Config.ConsulScheme,
+		WaitTime: time.Duration(Config.ConsulTimeout) * time.Second,
 	})
 }

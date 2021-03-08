@@ -14,6 +14,21 @@ var (
 )
 
 // HTTPSdk结构体.
+//
+//   req := NewHttp("service")
+//   req.SetBody(`{"key":"value"}`)
+//   req.SetContentType("application/json")
+//   req.SetMethod("POST")
+//   req.SetRoute("/site/index")
+//   req.SetTimeout(10)
+//
+//   ctx := log.NewContext()
+//   res := req.Run(ctx)
+//
+//   if res.HasError(){
+//       return fmt.Errorf("sdk request error: %v", res.GetError())
+//   }
+//
 type ClientHttp struct {
 	index   uint64 // pool index.
 	route   string // service route.
@@ -24,7 +39,6 @@ type ClientHttp struct {
 // 执行SDK.
 // 本方法必须在Set类方法之后执行, 并返回SDK请求结果.
 func (o *ClientHttp) Run(ctx interface{}) (res *ClientResponse) {
-
 	host, err := Consul.Get(ctx, o.service)
 	// normal error.
 	if err != nil {
@@ -32,7 +46,6 @@ func (o *ClientHttp) Run(ctx interface{}) (res *ClientResponse) {
 		res.end()
 		return res
 	}
-
 	o.request.SetUrl(host + "/" + o.route)
 	return o.request.Run(ctx)
 }

@@ -15,15 +15,22 @@
 package sdk
 
 import (
+	"net/http"
 	"regexp"
 	"sync"
 )
 
 const (
-	CacheLifetime float64 = 3.0
-	Timeout               = 2
-	RequestTime           = 25
-	ServiceScheme         = "http"
+	DefaultCacheLifetime  float64 = 3.0
+	DefaultConsulAddress          = "127.0.0.1:8500"
+	DefaultConsulScheme           = "http"
+	DefaultConsulTimeout          = 2
+	DefaultContentType            = "application/json"
+	DefaultRequestMethod          = http.MethodPost
+	DefaultRequestTimeout         = 25
+	DefaultServiceScheme          = "http"
+	Name                          = "SDK"
+	Version                       = "1.0.0"
 )
 
 var (
