@@ -21,6 +21,10 @@ import (
 )
 
 const (
+	ErrorDefaultCode = 1
+)
+
+const (
 	DefaultCacheLifetime  float64 = 3.0
 	DefaultConsulAddress          = "127.0.0.1:8500"
 	DefaultConsulScheme           = "http"

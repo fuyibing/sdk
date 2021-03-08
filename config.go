@@ -116,12 +116,12 @@ func (o *configuration) LoadYamlApp(file string) error {
 // Initialize configuration.
 func (o *configuration) initialize() {
 	for _, file := range []string{"./tmp/sdk.yaml", "../tmp/sdk.yaml", "./config/sdk.yaml", "../config/sdk.yaml"} {
-		if o.LoadYaml(file) != nil {
+		if o.LoadYaml(file) == nil {
 			break
 		}
 	}
 	for _, file := range []string{"./tmp/app.yaml", "../tmp/app.yaml", "./config/app.yaml", "../config/app.yaml"} {
-		if o.LoadYamlApp(file) != nil {
+		if o.LoadYamlApp(file) == nil {
 			break
 		}
 	}

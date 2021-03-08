@@ -129,6 +129,7 @@ func (o *ClientRequest) SetUserAgent(userAgent string) *ClientRequest {
 func (o *ClientRequest) runner(ctx interface{}, try int) (res *ClientResponse) {
 	// 1. init response.
 	res = NewResponse()
+	res.url = o.url
 	// 2. end request.
 	res.time = time.Now()
 	defer func() {

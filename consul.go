@@ -93,8 +93,13 @@ func (o *consul) fromServer(ctx interface{}, service string) (host string, err e
 	if ss, _, err = o.client.Health().Service(service, "", true, nil); err != nil {
 		return
 	}
+	ln := len(ss)
+	if ln < 1 {
+		err = fmt.Errorf("service not found")
+		return
+	}
 	// fetch one.
-	se = ss[rand.Intn(len(ss))]
+	se = ss[rand.Intn(ln)]
 	host = fmt.Sprintf("%s:%d", se.Service.Address, se.Service.Port)
 	// add scheme prefix to service.
 	if !regexpServiceAddress.MatchString(host) {
