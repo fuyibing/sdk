@@ -3,6 +3,12 @@
 
 package tests
 
+import (
+	"testing"
+
+	"github.com/fuyibing/sdk"
+)
+
 // func TestFunc(t *testing.T) {
 // 	ctx := log.NewContext()
 // 	wg := new(sync.WaitGroup)
@@ -36,3 +42,31 @@ package tests
 // 	ctx := log.NewContext()
 // 	sdk.Get(ctx, "http://wxapi.turboradio.cn/v/user/info")
 // }
+
+func TestUrlMap(t *testing.T) {
+	sdk.NewRequest().
+		SetUrl("http://localhost:18000/").
+		SetMethod("POST").
+		SetBody(map[string]interface{}{"key": "value", "num": 1}).
+		Run(nil)
+}
+func TestUrlString(t *testing.T) {}
+func TestUrlByte(t *testing.T)   {}
+func TestUrlStruct(t *testing.T) {
+
+	v := &struct {
+		Key   string
+		Value int
+	}{
+		Key:   "key",
+		Value: 1001,
+	}
+
+	// sdk.NewRequest().
+	// 	SetUrl("http://localhost:18000/").
+	// 	SetMethod("POST").
+	// 	SetBody(v).
+	// 	Run(nil)
+
+	sdk.Post(nil, "http://localhost:18000", v)
+}

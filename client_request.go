@@ -5,6 +5,7 @@ package sdk
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -85,6 +86,9 @@ func (o *ClientRequest) SetBody(body interface{}) *ClientRequest {
 		o.body = bytes.NewBuffer(body.([]byte))
 	case reflect.String:
 		o.body = bytes.NewBufferString(body.(string))
+	default:
+		js, _ := json.Marshal(body)
+		o.body = bytes.NewBuffer(js)
 	}
 	return o
 }

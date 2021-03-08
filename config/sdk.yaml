@@ -13,7 +13,7 @@
 # [service-request-timeout]
 #
 cache-timelife: 1
-consul-address: "udsdk.turboradio.cn"
+consul-address-x: "udsdk.turboradio.cn"
 consul-scheme: http
 consul-timeout: 3
 service-request-content-type: "application/json"

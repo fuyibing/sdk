@@ -8,7 +8,11 @@ import (
 	"github.com/fuyibing/sdk"
 )
 
+const (
+	Name = "pm-fin-shares"
+)
+
 // Create bill.
 func Create(ctx interface{}, body interface{}) *sdk.ClientResponse {
-	return sdk.NewHttp("pm-fin-shares").SetRoute("/insure/policy/paging").SetBody(body).Run(ctx)
+	return sdk.NewHttp(Name).SetRoute("/insure/policy/paging").SetBody(body).Run(ctx)
 }
