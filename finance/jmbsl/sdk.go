@@ -19,15 +19,15 @@ type MsgBody struct {
 	TopicTag  string
 	MsgKey    string
 	ReqNo     string
-	Message   string
+	Message   []interface{}
 }
 
 func (o *MsgBody) ToMap() map[string]interface{} {
 	return map[string]interface{}{
 		"topic":   o.TopicName,
-		"tag":     o.TopicName,
+		"tag":     o.TopicTag,
 		"reqNo":   o.getUUID(),
-		"msgKey":  o.TopicName,
+		"msgKey":  o.MsgKey,
 		"message": o.Message,
 	}
 }
