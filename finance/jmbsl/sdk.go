@@ -17,7 +17,7 @@ func Create(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/insure/policy/paging").SetBody(body).Run(ctx)
 }
 
-func buildBody(ctx interface{}, body interface{}) *sdk.ClientResponse {
+func buildBody(ctx interface{}, bod interface{}) *sdk.ClientResponse {
 	return nil
 }
 
