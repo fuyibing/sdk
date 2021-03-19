@@ -14,33 +14,50 @@ const (
 	Name = "java.mbsl"
 )
 
-type MsgBody struct {
+type PublishMsgBody struct {
 	TopicName string
 	TopicTag  string
 	MsgKey    string
 	ReqNo     string
-	Message   []interface{}
+	Message   interface{}
 }
 
-func (o *MsgBody) ToMap() map[string]interface{} {
+type BatchMsgBody struct {
+	TopicName string
+	TopicTag  string
+	MsgKey    string
+	ReqNo     string
+	Messages  interface{}
+}
+
+func (o *PublishMsgBody) ToMap() map[string]interface{} {
 	return map[string]interface{}{
 		"topic":   o.TopicName,
 		"tag":     o.TopicTag,
-		"reqNo":   o.getUUID(),
+		"reqNo":   getUUID(),
 		"msgKey":  o.MsgKey,
 		"message": o.Message,
 	}
 }
 
-func (o *MsgBody) getUUID() string {
+func (o *BatchMsgBody) ToMap() map[string]interface{} {
+	return map[string]interface{}{
+		"topic":    o.TopicName,
+		"tag":      o.TopicTag,
+		"reqNo":    getUUID(),
+		"messages": o.Messages,
+	}
+}
+
+func getUUID() string {
 	u, _ := uuid.NewUUID()
 	return strings.ReplaceAll(u.String(), "-", "")
 }
 
-func Publish(ctx interface{}, body *MsgBody) *sdk.ClientResponse {
+func Publish(ctx interface{}, body *PublishMsgBody) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/topic/publish").SetBody(body.ToMap()).Run(ctx)
 }
 
-func Batch(ctx interface{}, body *MsgBody) *sdk.ClientResponse {
+func Batch(ctx interface{}, body *BatchMsgBody) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/topic/batch").SetBody(body.ToMap()).Run(ctx)
 }
