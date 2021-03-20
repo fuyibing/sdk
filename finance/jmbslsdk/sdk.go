@@ -2,7 +2,7 @@
 // date: 2021-03-05
 
 // SDK for bill of finance.
-package jmbsl
+package jmbslsdk
 
 import (
 	"github.com/fuyibing/sdk"
