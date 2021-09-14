@@ -169,7 +169,7 @@ func (o *ClientRequest) runner(ctx interface{}, try int) (res *ClientResponse) {
 		return
 	}
 	// 3.2 assign request header.
-	//     todo: assign request tracing, open tracing.
+	log.ParseTracingToRequest(ctx, request)
 	request.Header.Set("content-type", o.contentType)
 	request.Header.Set("user-agent", o.userAgent)
 	for key, value := range o.headers {
