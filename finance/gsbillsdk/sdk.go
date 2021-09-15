@@ -7,7 +7,7 @@ package gsbillsdk
 import "github.com/fuyibing/sdk"
 
 const (
-	Name = "gs.bill	"
+	Name = "gs.bill"
 )
 
 // Create bill.
