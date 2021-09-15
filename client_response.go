@@ -118,3 +118,9 @@ func (o *ClientResponse) end() {
 	// Succeed.
 	o.data = tmp.Data
 }
+
+//
+func (o *ClientResponse) Unmarshal(v interface{}) error {
+	data, _ := json.Marshal(o.data)
+	return json.Unmarshal(data, v)
+}
