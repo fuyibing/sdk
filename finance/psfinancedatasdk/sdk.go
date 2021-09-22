@@ -14,3 +14,8 @@ const (
 func GetBillInfoByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/bill/info/detail").SetBody(body).Run(ctx)
 }
+
+// GetPartnerTaxServiceUnitDetail 财税服务费配置核算单位详情
+func GetPartnerTaxServiceUnitDetail(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/partner/tax/service/unit/detail").SetBody(body).Run(ctx)
+}
