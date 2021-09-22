@@ -10,7 +10,7 @@ const (
 	Name = "ps-finance-data"
 )
 
-// GetBillInfoByOrganizationIdAndUnitId 根据组织ID、核算单位ID获取开票配置(连锁、保司、药联集团公司等)
-func GetBillInfoByOrganizationIdAndUnitId(ctx interface{}, body interface{}) *sdk.ClientResponse {
+// GetBillInfoByOrganizationId 根据组织ID获取开票配置(连锁、保司、药联集团公司等)
+func GetBillInfoByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/bill/info/detail").SetBody(body).Run(ctx)
 }
