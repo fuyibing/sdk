@@ -10,22 +10,7 @@ const (
 	Name = "ps-finance-data"
 )
 
-// GetMerchantInfoByOrganizationId 获取组织信息
-func GetMerchantInfoByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
-	return sdk.NewHttp(Name).SetRoute("/merchant/info").SetBody(body).Run(ctx)
-}
-
-// GetPartnerBillInfoByOrganizationId 获取连锁核算单位开票配置.
-func GetPartnerBillInfoByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
-	return sdk.NewHttp(Name).SetRoute("/partner/bill/info/unit/detail").SetBody(body).Run(ctx)
-}
-
-// GetInsurerBillInfoByOrganizationId 获取保司开票配置.
-func GetInsurerBillInfoByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
-	return sdk.NewHttp(Name).SetRoute("/insurer/bill/info/detail").SetBody(body).Run(ctx)
-}
-
-// GetUnionDrugBillInfoByOrganizationId 获取药联子公司开票配置.
-func GetUnionDrugBillInfoByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
-	return sdk.NewHttp(Name).SetRoute("/company/bill/info/detail").SetBody(body).Run(ctx)
+// GetBillInfoByOrganizationIdAndUnitId 根据组织ID、核算单位ID获取开票配置(连锁、保司、药联集团公司等)
+func GetBillInfoByOrganizationIdAndUnitId(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/bill/info/detail").SetBody(body).Run(ctx)
 }
