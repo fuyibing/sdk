@@ -10,7 +10,12 @@ const (
 	Name = "ps-finance-data"
 )
 
-// GetPartnerBillInfoByOrganizationId 获取连锁开票配置.
+// GetMerchantInfoByOrganizationId 获取组织信息
+func GetMerchantInfoByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/merchant/info").SetBody(body).Run(ctx)
+}
+
+// GetPartnerBillInfoByOrganizationId 获取连锁核算单位开票配置.
 func GetPartnerBillInfoByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/partner/bill/info/unit/detail").SetBody(body).Run(ctx)
 }
