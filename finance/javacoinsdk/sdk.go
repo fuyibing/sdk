@@ -13,7 +13,7 @@ func GetPaymentPageByBusinessNo(ctx interface{}, body interface{}) *sdk.ClientRe
 	return sdk.NewHttp(Name).SetRoute("/payment/page").SetBody(body).Run(ctx)
 }
 
-// paymentCreate 创建付款单.
-func paymentCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
+// PaymentCreate 创建付款单.
+func PaymentCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/payment/create").SetBody(body).Run(ctx)
 }
