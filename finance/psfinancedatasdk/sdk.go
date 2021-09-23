@@ -39,3 +39,8 @@ func GetPartnerTaxServiceUnitDetail(ctx interface{}, body interface{}) *sdk.Clie
 func GetBankAccountDetailByType(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/bank/account/detail/by/type").SetBody(body).Run(ctx)
 }
+
+// GetMerchantByOrganizationId 获取连锁信息.
+func GetMerchantByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/partner/detail").SetBody(body).Run(ctx)
+}
