@@ -35,4 +35,7 @@ func GetPartnerTaxServiceUnitDetail(ctx interface{}, body interface{}) *sdk.Clie
 	return sdk.NewHttp(Name).SetRoute("/partner/tax/service/unit/detail").SetBody(body).Run(ctx)
 }
 
-
+// GetBankAccountDetailByType 查询银行帐号信息
+func GetBankAccountDetailByType(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/bank/account/detail/by/type").SetBody(body).Run(ctx)
+}
