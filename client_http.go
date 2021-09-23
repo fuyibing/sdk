@@ -38,7 +38,19 @@ type ClientHttp struct {
 
 // 执行SDK.
 // 本方法必须在Set类方法之后执行, 并返回SDK请求结果.
-func (o *ClientHttp) Run(ctx interface{}) (res *ClientResponse) {
+//
+//   headers := []map[string]string{
+//      {
+//          "content-type":"application/json",
+//      },
+//      {
+//          "user-agent":"app/ver",
+////    }
+//   }
+//
+//   ctx := context.Background()
+//   sdk.Run(ctx, headers...)
+func (o *ClientHttp) Run(ctx interface{}, headers ...map[string]string) (res *ClientResponse) {
 	host, err := Consul.Get(ctx, o.service)
 	// normal error.
 	if err != nil {
@@ -47,6 +59,13 @@ func (o *ClientHttp) Run(ctx interface{}) (res *ClientResponse) {
 		return res
 	}
 	o.request.SetUrl(host + "/" + o.route)
+
+	for _, header := range headers {
+		for k, v := range header {
+			o.request.SetHeader(k, v)
+		}
+	}
+
 	return o.request.Run(ctx)
 }
 
