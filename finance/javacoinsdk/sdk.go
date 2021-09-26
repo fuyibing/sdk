@@ -17,3 +17,8 @@ func GetPaymentPageByBusinessNo(ctx interface{}, body interface{}) *sdk.ClientRe
 func PaymentCreate(ctx interface{}, body interface{},headers map[string]string) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/payment/create").SetBody(body).Run(ctx,headers)
 }
+
+// PaymentDelete 删除付款单.
+func PaymentDelete(ctx interface{}, body interface{},headers map[string]string) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/payment/remove").SetBody(body).Run(ctx,headers)
+}
