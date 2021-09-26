@@ -44,3 +44,13 @@ func GetBankAccountDetailByType(ctx interface{}, body interface{}) *sdk.ClientRe
 func GetMerchantByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/partner/detail").SetBody(body).Run(ctx)
 }
+
+// GetInsurerByOrganizationId 获取保司信息.
+func GetInsurerByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/insurer/detail").SetBody(body).Run(ctx)
+} //////////////
+
+// GetCompanyByOrganizationId 获取药联公司信息.
+func GetCompanyByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/company/detail").SetBody(body).Run(ctx)
+}
