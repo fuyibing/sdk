@@ -52,5 +52,5 @@ func GetInsurerByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientRe
 
 // GetCompanyByOrganizationId 获取药联公司信息.
 func GetCompanyByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
-	return sdk.NewHttp(Name).SetRoute("/company/detail").SetBody(body).Run(ctx)
+	return sdk.NewHttp(Name).SetRoute("/company/info").SetBody(body).Run(ctx)
 }
