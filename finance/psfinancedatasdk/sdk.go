@@ -54,3 +54,8 @@ func GetInsurerByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientRe
 func GetCompanyByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/company/info").SetBody(body).Run(ctx)
 }
+
+// GetRelationshipByOrganizationId 获取商业公司与商户关系.
+func GetRelationshipByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/relationship/listing").SetBody(body).Run(ctx)
+}
