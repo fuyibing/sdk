@@ -23,3 +23,8 @@ func PaymentCreate(ctx interface{}, body interface{}, headers ...map[string]stri
 func PaymentDelete(ctx interface{}, body interface{}, headers ...map[string]string) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/payment/remove").SetBody(body).Run(ctx, headers...)
 }
+
+// MonthPoolStatistics 查询资金池月统计.
+func MonthPoolStatistics(ctx interface{}, body interface{}, headers ...map[string]string) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/fundAccount/statisticsRangeDate").SetBody(body).Run(ctx, headers...)
+}
