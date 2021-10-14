@@ -66,3 +66,8 @@ func BillIncomeClientApply(ctx interface{}, body interface{}) *sdk.ClientRespons
 func BillSaleCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/bill/sale/create").SetBody(body).Run(ctx)
 }
+
+// InvoiceCreate 录入发票
+func InvoiceCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/invoice/create").SetBody(body).Run(ctx)
+}
