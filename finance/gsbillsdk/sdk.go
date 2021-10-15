@@ -62,9 +62,19 @@ func BillIncomeClientApply(ctx interface{}, body interface{}) *sdk.ClientRespons
 	return sdk.NewHttp(Name).SetRoute("/bill/income/client/apply").SetBody(body).Run(ctx)
 }
 
-// BillSaleCreate 创建销售清单
+// BillSaleCreate 创建开票单销售清单
 func BillSaleCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/bill/sale/create").SetBody(body).Run(ctx)
+}
+
+// BillProtocolCreate 创建开票协议
+func BillProtocolCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/bill/protocol/create").SetBody(body).Run(ctx)
+}
+
+// BillProtocolDetail 查询开票协议
+func BillProtocolDetail(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/bill/protocol/detail").SetBody(body).Run(ctx)
 }
 
 // InvoiceCreate 录入发票
