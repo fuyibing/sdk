@@ -59,3 +59,8 @@ func GetCompanyByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientRe
 func GetRelationshipByOrganizationId(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/relationship/listing").SetBody(body).Run(ctx)
 }
+
+// GetAutoCreateHxMerchant 批量获取连锁自动生成换新结算单配置.
+func GetAutoCreateHxMerchant(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/partner/setting/auto/create/hx/merchant").SetBody(body).Run(ctx)
+}
