@@ -77,7 +77,12 @@ func BillProtocolDetail(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/bill/protocol/detail").SetBody(body).Run(ctx)
 }
 
-// InvoiceCreate 录入发票
+// InvoiceCheck 发票检测
+func InvoiceCheck(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/invoice/check").SetBody(body).Run(ctx)
+}
+
+// InvoiceCreate 发票录入
 func InvoiceCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/invoice/create").SetBody(body).Run(ctx)
 }
