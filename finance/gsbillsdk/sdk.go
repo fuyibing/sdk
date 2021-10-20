@@ -77,12 +77,17 @@ func BillProtocolDetail(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/bill/protocol/detail").SetBody(body).Run(ctx)
 }
 
-// InvoiceCheck 发票检测
-func InvoiceCheck(ctx interface{}, body interface{}) *sdk.ClientResponse {
-	return sdk.NewHttp(Name).SetRoute("/invoice/check").SetBody(body).Run(ctx)
+// InvoiceIntegrityCheck 发票输入完整性检测
+func InvoiceIntegrityCheck(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/invoice/integrity/check").SetBody(body).Run(ctx)
 }
 
-// InvoiceCreate 发票录入
-func InvoiceCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
-	return sdk.NewHttp(Name).SetRoute("/invoice/create").SetBody(body).Run(ctx)
+// InvoiceBusinessCreate 发票商家录入
+func InvoiceBusinessCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/invoice/business/create").SetBody(body).Run(ctx)
+}
+
+// InvoiceXforceCreate 发票票易通录入
+func InvoiceXforceCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/invoice/xforce/create").SetBody(body).Run(ctx)
 }
