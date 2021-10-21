@@ -65,7 +65,7 @@ func GetAutoCreateHxMerchant(ctx interface{}, body interface{}) *sdk.ClientRespo
 	return sdk.NewHttp(Name).SetRoute("/partner/setting/auto/create/hx/merchant").SetBody(body).Run(ctx)
 }
 
-// GetWorker 获取员工信息
-func GetWorkerPaging(ctx interface{}, body interface{}) *sdk.ClientResponse {
-	return sdk.NewHttp(Name).SetRoute("/worker/paging").SetBody(body).Run(ctx)
+// GetWorker 获取连锁员工信息
+func GetPartnerWorkerPaging(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/partner/worker/paging").SetBody(body).Run(ctx)
 }
