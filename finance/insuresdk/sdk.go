@@ -7,7 +7,7 @@ package insuresdk
 import "github.com/fuyibing/sdk"
 
 const (
-	Name = "js-fin-bill"
+	Name = "jm.insure"
 )
 
 // Create bill.

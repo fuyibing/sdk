@@ -7,7 +7,7 @@ package javabillsdk
 import "github.com/fuyibing/sdk"
 
 const (
-	Name = "jm.bill"
+	Name = "js-fin-bill"
 )
 
 // Create bill.
