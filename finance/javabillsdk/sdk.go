@@ -14,3 +14,13 @@ const (
 func PayoutBillApply(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/bill/payout/save").SetBody(body).Run(ctx)
 }
+
+// 根据 开票单业务单号 查询发票
+func InvoicePageByBusinessNo(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/invoice/pageByBusinessNo").SetBody(body).Run(ctx)
+}
+
+// 根据 开票单业务单号 查询发票最大的时间
+func InvoiceGetSignAndSendTime(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/invoice/get/signAndSendTime").SetBody(body).Run(ctx)
+}
