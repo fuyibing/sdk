@@ -10,9 +10,14 @@ const (
 	Name = "js-fin-bill"
 )
 
-// Create bill.
+// 应付开票
 func PayoutBillApply(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/bill/payout/save").SetBody(body).Run(ctx)
+}
+
+// 应收开票
+func IncomeBillApply(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/bill/income/save").SetBody(body).Run(ctx)
 }
 
 // 根据 开票单业务单号 查询发票
