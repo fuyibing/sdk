@@ -60,9 +60,14 @@ func GetRelationshipByOrganizationId(ctx interface{}, body interface{}) *sdk.Cli
 	return sdk.NewHttp(Name).SetRoute("/relationship/listing").SetBody(body).Run(ctx)
 }
 
-// GetAutoCreateHxMerchant 批量获取连锁自动生成换新结算单配置.
+// GetAutoCreateHxMerchant 批量获取，不自动生成换新结算单的连锁ID.
 func GetAutoCreateHxMerchant(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/partner/setting/auto/create/hx/merchant").SetBody(body).Run(ctx)
+}
+
+// GetAutoCreateHxBillMerchant 批量获取，不自动生成换新开票单的连锁ID.
+func GetAutoCreateHxBillMerchant(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/partner/setting/auto/create/hx/bill/merchant").SetBody(body).Run(ctx)
 }
 
 // GetWorker 获取连锁员工信息
