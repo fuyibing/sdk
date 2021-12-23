@@ -79,3 +79,8 @@ func GetPartnerWorkerPaging(ctx interface{}, body interface{}) *sdk.ClientRespon
 func GetPartnerSettingDetail(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/partner/setting/detail").SetBody(body).Run(ctx)
 }
+
+// GetReminderList 根据核算单位获取微信提醒人
+func GetReminderList(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/partner/worker/wechat/push/list").SetBody(body).Run(ctx)
+}
