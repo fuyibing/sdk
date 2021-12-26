@@ -10,7 +10,12 @@ const (
 	Name = "jm.insure"
 )
 
-// Create bill.
+// GetByInsurerIdAndPolicyNo get policy by insurerId+policyNo.
 func GetByInsurerIdAndPolicyNo(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/policy/getByInsurerIdAndPolicyNo").SetBody(body).Run(ctx)
+}
+
+// ChangeOrderPaidTime change order pay time.
+func ChangeOrderPaidTime(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/mbs/order/update/orderPaidTime").SetBody(body).Run(ctx)
 }
