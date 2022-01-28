@@ -32,5 +32,5 @@ func InvoiceGetSignAndSendTime(ctx interface{}, body interface{}) *sdk.ClientRes
 
 // InvoicePaging
 func InvoicePaging(ctx interface{}, body interface{}) *sdk.ClientResponse {
-	return sdk.NewHttp(Name).SetRoute("/invoice/paging").SetBody(body).Run(ctx)
+	return sdk.NewHttp(Name).SetRoute("/invoice/page").SetBody(body).Run(ctx)
 }
