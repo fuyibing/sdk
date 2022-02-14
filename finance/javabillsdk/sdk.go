@@ -34,3 +34,8 @@ func InvoiceGetSignAndSendTime(ctx interface{}, body interface{}) *sdk.ClientRes
 func InvoicePaging(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/invoice/page").SetBody(body).Run(ctx)
 }
+
+// OpenOnlineBilling 开启在线开票
+func OpenOnlineBilling(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/bill/openOnlineBilling").SetBody(body).Run(ctx)
+}

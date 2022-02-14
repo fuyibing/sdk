@@ -84,3 +84,8 @@ func GetPartnerSettingDetail(ctx interface{}, body interface{}) *sdk.ClientRespo
 func GetReminderList(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/partner/worker/wechat/push/list").SetBody(body).Run(ctx)
 }
+
+// GetClassificationInfo
+func GetClassificationInfo(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/tax/classification/encode/detail/by/match").SetBody(body).Run(ctx)
+}
