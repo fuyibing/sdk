@@ -9,8 +9,8 @@ const (
 	Name = "java.coin"
 )
 
-// GetPaymentPageByBusinessNo 查询付款单列表.
-func GetPaymentPageByBusinessNo(ctx interface{}, body interface{}) *sdk.ClientResponse {
+// PaymentPaging 付款单列表.
+func PaymentPaging(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/payment/page").SetBody(body).Run(ctx)
 }
 
