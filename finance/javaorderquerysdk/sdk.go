@@ -1,7 +1,7 @@
-package javaorderquerysdk
-
 // author: Haven <chenhao@uniondrug.com>
 // date: 2022-03-02
+
+package javaorderquerysdk
 
 import "github.com/fuyibing/sdk"
 
@@ -15,6 +15,6 @@ func OrderQueryMain(ctx interface{}, body interface{}) *sdk.ClientResponse {
 }
 
 // OrderQuerySub 查询子订单接口.
-func OrderQuerySub(ctx interface{}, body interface{}, headers ...map[string]string) *sdk.ClientResponse {
-	return sdk.NewHttp(Name).SetRoute("/order/query/sub").SetBody(body).Run(ctx, headers...)
+func OrderQuerySub(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/order/query/sub").SetBody(body).Run(ctx)
 }
