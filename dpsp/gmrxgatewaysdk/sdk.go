@@ -5,7 +5,7 @@ package gmrxgatewaysdk
 import "github.com/fuyibing/sdk"
 
 const (
-	Name = "rxapi"
+	Name = "gm-rx-gateway"
 )
 
 // 供应商申请处方
