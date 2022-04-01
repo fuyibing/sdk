@@ -10,6 +10,6 @@ const (
 )
 
 // 发布
-func topicPublish(ctx interface{}, body interface{}) *sdk.ClientResponse {
+func TopicPublish(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/topic/publish").SetBody(body).Run(ctx)
 }
