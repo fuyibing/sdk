@@ -12,3 +12,7 @@ const (
 func SupplierRxApply(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/supplier/rx/apply").SetBody(body).Run(ctx)
 }
+
+func SupplierPayStatus(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/supplier/pay/status").SetBody(body).Run(ctx)
+}
