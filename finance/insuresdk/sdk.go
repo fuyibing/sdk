@@ -19,3 +19,8 @@ func GetByInsurerIdAndPolicyNo(ctx interface{}, body interface{}) *sdk.ClientRes
 func ChangeOrderPaidTime(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/mbs/order/update/orderPaidTime").SetBody(body).Run(ctx)
 }
+
+// ListReverseByOrder .
+func ListReverseByOrder(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/reverse/listReverseByOrder").SetBody(body).Run(ctx)
+}
