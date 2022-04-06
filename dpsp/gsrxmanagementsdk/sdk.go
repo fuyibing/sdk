@@ -12,3 +12,8 @@ const (
 func RxUpdate(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/rx/update").SetBody(body).Run(ctx)
 }
+
+// 处方供应商回调写入
+func RxSupplierCallbackAdd(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/rx/supplier/callback/add").SetBody(body).Run(ctx)
+}
