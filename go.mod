@@ -6,6 +6,7 @@ require (
 	github.com/CloudyKit/jet/v3 v3.0.1 // indirect
 	github.com/Shopify/goreferrer v0.0.0-20210305184658-1a4fe54f556d // indirect
 	github.com/fuyibing/log/v2 v2.0.5
+	github.com/google/uuid v1.2.0
 	github.com/hashicorp/consul/api v1.8.1
 	github.com/iris-contrib/jade v1.1.4 // indirect
 	github.com/iris-contrib/schema v0.0.6 // indirect
