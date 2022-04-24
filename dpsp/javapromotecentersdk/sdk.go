@@ -1,4 +1,4 @@
-package javambssdk
+package javapromotecentersdk
 
 import "github.com/fuyibing/sdk"
 
