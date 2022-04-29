@@ -89,3 +89,8 @@ func GetReminderList(ctx interface{}, body interface{}) *sdk.ClientResponse {
 func GetClassificationInfo(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/tax/classification/encode/detail/by/match").SetBody(body).Run(ctx)
 }
+
+// GetSubsidyDetail
+func GetSubsidyDetail(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/partner/subsidy/detail").SetBody(body).Run(ctx)
+}
