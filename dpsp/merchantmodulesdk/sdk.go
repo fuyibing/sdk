@@ -19,6 +19,6 @@ func BackEndEditIsAppletService(ctx interface{}, body interface{}) *sdk.ClientRe
 }
 
 // 商户详情
-func organizebaseInfo(ctx interface{}, body interface{}) *sdk.ClientResponse {
+func OrganizebaseInfo(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/organizebase/info").SetBody(body).Run(ctx)
 }
