@@ -15,7 +15,7 @@ func BackEndEditIsMember(ctx interface{}, body interface{}) *sdk.ClientResponse 
 
 // 商户开通连锁小程序服务
 func BackEndEditIsAppletService(ctx interface{}, body interface{}) *sdk.ClientResponse {
-	return sdk.NewHttp(Name).SetRoute("/organizebasebackend/editIsAppletService").SetBody(body).Run(ctx)
+	return sdk.NewHttp(Name).SetRoute("/organizebasebackend/editappletservice").SetBody(body).Run(ctx)
 }
 
 // 商户详情
