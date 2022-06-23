@@ -33,3 +33,8 @@ func MonthPoolStatistics(ctx interface{}, body interface{}, headers ...map[strin
 func MonthPoolStatisticsV2(ctx interface{}, body interface{}, headers ...map[string]string) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/fundRecordDetail/statisticsV2").SetBody(body).Run(ctx, headers...)
 }
+
+// GetFundAccount 查询资金账户.
+func GetFundAccount(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/fundAccount/get").SetBody(body).Run(ctx)
+}
