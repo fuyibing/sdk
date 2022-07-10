@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	Name = "outreach-resource-api"
+	Name = "outreach.resource.api"
 )
 
 func CallThirdPartyService(ctx interface{}, body interface{}) *sdk.ClientResponse {
