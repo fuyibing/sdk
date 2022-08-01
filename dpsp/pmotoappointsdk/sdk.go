@@ -7,6 +7,6 @@ const (
 )
 
 // 小程序会员购买埋点
-func goBuried(ctx interface{}, body interface{}) *sdk.ClientResponse {
+func GoBuried(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/order/goSensor").SetBody(body).Run(ctx)
 }
