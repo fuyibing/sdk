@@ -15,3 +15,8 @@ func UserCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
 func UserDetail(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetMethod("GET").SetRoute("/user/detail").SetBody(body).Run(ctx)
 }
+
+// 会员是否存在
+func UserExist(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetMethod("GET").SetRoute("/user/exist").SetBody(body).Run(ctx)
+}
