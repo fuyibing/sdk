@@ -10,11 +10,11 @@ const (
 )
 
 // 永久授权码创建
-func tokenPermanentCodeCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
+func TokenPermanentCodeCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/token/permanent/code/create").SetBody(body).Run(ctx)
 }
 
 // 授权链接
-func tokenAuthUrl(ctx interface{}, body interface{}) *sdk.ClientResponse {
+func TokenAuthUrl(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/token/auth/url").SetBody(body).Run(ctx)
 }
