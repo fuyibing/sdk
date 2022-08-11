@@ -18,3 +18,8 @@ func TokenPermanentCodeCreate(ctx interface{}, body interface{}) *sdk.ClientResp
 func TokenAuthUrl(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/token/auth/url").SetBody(body).Run(ctx)
 }
+
+// 创建订单
+func OrderCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/order/create").SetBody(body).Run(ctx)
+}
