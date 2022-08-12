@@ -23,3 +23,8 @@ func TokenAuthUrl(ctx interface{}, body interface{}) *sdk.ClientResponse {
 func OrderCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/order/create").SetBody(body).Run(ctx)
 }
+
+// 创建【联系我】二维码
+func ExternalContactWayCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/external/contact/way/create").SetBody(body).Run(ctx)
+}
