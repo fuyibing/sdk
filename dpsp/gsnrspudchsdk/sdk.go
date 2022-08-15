@@ -38,3 +38,8 @@ func OrderSuccessPay(ctx interface{}, body interface{}) *sdk.ClientResponse {
 func ExternalContactWayCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/external/contact/way/create").SetBody(body).Run(ctx)
 }
+
+// 用户详情
+func OauthUserDetail(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/oauth/user/detail").SetBody(body).Run(ctx)
+}
