@@ -34,6 +34,11 @@ func OrderSuccessPay(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/order/success/pay").SetBody(body).Run(ctx)
 }
 
+// 账号激活
+func OrderAccountActive(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/order/account/active").SetBody(body).Run(ctx)
+}
+
 // 创建【联系我】二维码
 func ExternalContactWayCreate(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/external/contact/way/create").SetBody(body).Run(ctx)
