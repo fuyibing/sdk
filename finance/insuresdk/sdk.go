@@ -24,3 +24,8 @@ func ChangeOrderPaidTime(ctx interface{}, body interface{}) *sdk.ClientResponse 
 func ListReverseByOrder(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/reverse/listReverseByOrder").SetBody(body).Run(ctx)
 }
+
+// PolicyPage .
+func PolicyPage(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/policy/page").SetBody(body).Run(ctx)
+}
