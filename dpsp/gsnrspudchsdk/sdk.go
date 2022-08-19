@@ -44,6 +44,11 @@ func ExternalContactWayCreate(ctx interface{}, body interface{}) *sdk.ClientResp
 	return sdk.NewHttp(Name).SetRoute("/external/contact/way/create").SetBody(body).Run(ctx)
 }
 
+// 查询【联系我】二维码
+func ExternalContactWayGet(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/external/contact/way/get").SetBody(body).Run(ctx)
+}
+
 // 用户详情
 func OauthUserDetail(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/oauth/user/detail").SetBody(body).Run(ctx)
