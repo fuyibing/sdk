@@ -99,3 +99,8 @@ func GetSubsidyDetail(ctx interface{}, body interface{}) *sdk.ClientResponse {
 func GetDictList(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/dict/listing").SetBody(body).Run(ctx)
 }
+
+// GetDictDetailByName
+func GetDictDetailByName(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/dict/detailByName").SetBody(body).Run(ctx)
+}
