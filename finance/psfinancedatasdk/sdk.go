@@ -104,3 +104,8 @@ func GetDictList(ctx interface{}, body interface{}) *sdk.ClientResponse {
 func GetDictDetailByName(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/dict/detailByName").SetBody(body).Run(ctx)
 }
+
+// GetDictGroupDetailByName
+func GetDictGroupDetailByName(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/dict/group/detailByName").SetBody(body).Run(ctx)
+}
