@@ -43,8 +43,3 @@ func GetFundAccount(ctx interface{}, body interface{}) *sdk.ClientResponse {
 func GetFundAccountBalance(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/fundAccount/queryBalance").SetBody(body).Run(ctx)
 }
-
-// PaymentTaxDeductSummary 查询资金付款单，指定实际付款时间段内，收款方（连锁）直付财税金额汇总.
-func PaymentTaxDeductSummary(ctx interface{}, body interface{}) *sdk.ClientResponse {
-	return sdk.NewHttp(Name).SetRoute("/payment/summary/taxDeductAmount").SetBody(body).Run(ctx)
-}
