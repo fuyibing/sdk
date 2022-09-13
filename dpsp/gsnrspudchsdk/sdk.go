@@ -53,3 +53,8 @@ func ExternalContactWayGet(ctx interface{}, body interface{}) *sdk.ClientRespons
 func OauthUserDetail(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/oauth/user/detail").SetBody(body).Run(ctx)
 }
+
+// 标签回调
+func TagCallback(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/tag/callback").SetBody(body).Run(ctx)
+}
