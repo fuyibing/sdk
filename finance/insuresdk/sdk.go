@@ -29,3 +29,8 @@ func ListReverseByOrder(ctx interface{}, body interface{}) *sdk.ClientResponse {
 func PolicyPage(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/policy/page").SetBody(body).Run(ctx)
 }
+
+// PageWithReparations .
+func PageWithReparations(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/reparationsReceiptBankItem/pageWithReparations").SetBody(body).Run(ctx)
+}
