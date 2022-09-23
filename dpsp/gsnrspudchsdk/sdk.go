@@ -58,3 +58,8 @@ func OauthUserDetail(ctx interface{}, body interface{}) *sdk.ClientResponse {
 func TagCallback(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/tag/callback").SetBody(body).Run(ctx)
 }
+
+// 发送欢迎语
+func WelcomeSend(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/welcome/send").SetBody(body).Run(ctx)
+}
