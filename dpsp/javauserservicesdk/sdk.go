@@ -15,3 +15,8 @@ func UserInfoAddOr(ctx interface{}, body interface{}) *sdk.ClientResponse {
 func BatchByUnionIds(ctx interface{}, body interface{}) *sdk.ClientResponse {
 	return sdk.NewHttp(Name).SetRoute("/v2/api/userBasic/batchByUnionIds").SetBody(body).Run(ctx)
 }
+
+// 获取用户真实证件信息
+func UserCardGetReal(ctx interface{}, body interface{}) *sdk.ClientResponse {
+	return sdk.NewHttp(Name).SetRoute("/v2/api/userCard/getReal").SetBody(body).Run(ctx)
+}
